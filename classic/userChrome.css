@@ -31,7 +31,7 @@
 /************************************************************************************************/
 
 /* navigation toolbar buttons appearance - only use one at a time *******************************/
-@import url(./css/buttons/buttons_on_navbar_classic_appearance.css); /**/
+/*@import url(./css/buttons/buttons_on_navbar_classic_appearance.css); /**/ 
 /* @import url(./css/buttons/buttons_on_navbar_glass_appearance.css); /**/
 
 /* navigation toolbar buttons - button roundness (edit file to set different roundness) *********/
@@ -42,7 +42,7 @@
 /* @import url(./css/buttons/buttons_on_navbar_squared_buttons_fx58.css); /**/
 
 /* icon appearance - only use one at a time (custom icons do not scale in HiDPI modes) **********/
-@import url(./css/buttons/icons_colorized.css); /**/
+/*@import url(./css/buttons/icons_colorized.css); /**/
 /* @import url(./css/buttons/icons_white_icons.css); /**/
 /* @import url(./css/buttons/icons_custom_icons.css); /**/
 /* @import url(./css/buttons/icons_custom_icons_fx1.css); /**/
@@ -62,7 +62,7 @@
 
 /* bookmarks toolbar - buttons appearance - only use one at a time ******************************/
 /* old bookmarks toolbar button appearance - 'disable' for Windows 7s classic OS theme **********/
-@import url(./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css); /**/
+/* @import url(./css/buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css); /**/
 /* @import url(./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance.css); /**/
 /* @import url(./css/buttons/buttons_on_bookmarks_toolbar_classic_appearance_items.css); /**/
 
@@ -166,7 +166,7 @@
 /************************************************************************************************/
 
 /* custom tab appearance - only use one at a time ***********************************************/
-@import url(./css/tabs/classic_squared_tabs.css); /**/
+/*@import url(./css/tabs/classic_squared_tabs.css); /**/
 /* @import url(./css/tabs/classic_squared_tabs_aero.css); /**/	/* <-- AERO colors */
 /* @import url(./css/tabs/classic_squared_tabs_transparent.css); /**/
 /* @import url(./css/tabs/classic_squared_tabs_aeroglass.css); /**/
@@ -191,7 +191,7 @@
 /* - TABS BELOW TITLEBAR (Fx56-like) ************************************************************/
 /* @import url(./css/tabs/tabs_below_titlebar_above_navigation_toolbar.css); /**/
 /* - TABS BELOW NAVIGATION AND BOOKMARKS TOOLBARS (tabs not on top) *****************************/
-/* @import url(./css/tabs/tabs_below_navigation_toolbar.css); /**/
+@import url(./css/tabs/tabs_below_navigation_toolbar.css); /**/
 /* @import url(./css/tabs/tabs_below_navigation_toolbar_aero.css); /**/	/* <-- AERO colors */
 /* @import url(./css/tabs/tabs_below_navigation_toolbar_transparent.css); /**/
 /* @import url(./css/tabs/tabs_below_navigation_toolbar_aeroglass.css); /**/
@@ -207,12 +207,12 @@
 /* @import url(./css/tabs/tab_throbber_blue.css); /**/
 /* @import url(./css/tabs/tab_throbber_grey_classic.css); /**/
 /* @import url(./css/tabs/tab_throbber_green.css); /**/
-/* @import url(./css/tabs/tab_throbber_orange_ubuntu.css); /**/
+ @import url(./css/tabs/tab_throbber_orange_ubuntu.css); /**/
 
 /* tab close icon settings - only use one at a time *********************************************/
-@import url(./css/tabs/tab_close_always_visible.css); /**/
+/* @import url(./css/tabs/tab_close_always_visible.css); /**/
 /* @import url(./css/tabs/tab_close_on_active_tab_only.css); /**/
-/* @import url(./css/tabs/tab_close_show_on_hover_only.css); /**/
+@import url(./css/tabs/tab_close_show_on_hover_only.css); /**/
 /* @import url(./css/tabs/tab_close_hidden.css); /**/
 /* @import url(./css/tabs/tab_close_hidden_for_only_one_visible_tab.css); /**/
 /* @import url(./css/tabs/tab_close_at_tabs_start.css); /**/
@@ -247,9 +247,9 @@
 /* GENERAL UI ***********************************************************************************/
 /************************************************************************************************/
 
-@import url(./css/generalui/findbar_on_top.css); /**/
+/*@import url(./css/generalui/findbar_on_top.css); /**/
 @import url(./css/generalui/private_mode_indicator_hidden.css); /**/
-@import url(./css/generalui/bookmark_icons_colorized.css); /**/
+/*@import url(./css/generalui/bookmark_icons_colorized.css); /**/
 /* @import url(./css/generalui/bookmarks_smaller_more_bookmarks_icon.css); /**/
 /* @import url(./css/generalui/send_to_device_menuitems_hidden.css); /**/
 /* @import url(./css/generalui/popup_animation_fade_time_reduced.css); /**/
@@ -307,7 +307,7 @@
 /* @import url(./css/toolbars/bookmarks_toolbar_multiple_lines.css); /**/ /* <--- experimental */
 
 /* toolbar colors - only use one at a time ******************************************************/
-@import url(./css/toolbars/general_toolbar_colors.css); /**/
+/*@import url(./css/toolbars/general_toolbar_colors.css); /**/
 /* @import url(./css/toolbars/general_toolbar_colors_aero.css); /**/	/* <-- AERO colors */
 /* @import url(./css/toolbars/general_toolbar_colors_transparent.css); /**/
 /* @import url(./css/toolbars/general_toolbar_colors_aeroglass.css); /**/
@@ -332,7 +332,7 @@
 @import url(./css/locationbar/dropmarker_visible.css); /**/
 
 /* additional icons/buttons and third party page action buttons *********************************/
-@import url(./css/locationbar/icons_colorized.css); /**/
+/*@import url(./css/locationbar/icons_colorized.css); /**/
 @import url(./css/locationbar/reader_alternative_icon.css); /**/
 @import url(./css/locationbar/starbutton_is_last_pageaction_button.css); /**/
 @import url(./css/locationbar/pageaction_separator_in_location_bar_hidden.css); /**/
