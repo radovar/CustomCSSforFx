@@ -14,7 +14,7 @@
 }
 
 #TabsToolbar:not(:-moz-lwtheme) {
-  background: rgba(255,255,255,.0) !important;
+  background: unset !important;
 }
 
 /**/
