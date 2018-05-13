@@ -1,22 +1,32 @@
-/*AGENT_SHEET*/
-
-/* Firefox 57+ userChrome.css tweaks ****************************************************/
-/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **/
-/* by Aris (aris-addons@gmx.net)*********************************************************/
+/* Firefox Quantum userChrome.css tweaks ************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
+:root {
+  --bookmark_items_lines: 1 !important; /* override multiple bookmark lines option */
+}
 
+/* create an empty space below navigation toolbar */
 #main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"]  {
   padding-bottom: 28px !important;
 }
 
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"]:not([currentset*="personal-bookmarks-"]) #personal-bookmarks{
-  position: absolute !important;
-  bottom: 1px !important;
+/* reduce maximum width of location bar and search bar on navigaiton toolbar */
+#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"] :-moz-any(#urlbar-container, #urlbar, #search-container, #searchbar)  {
+  min-width: 50px !important;
 }
 
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks #PlacesChevron .toolbarbutton-icon {
+/* move bookmarks to empty space below navigation toolbar, if on navigation toolbar */
+#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"]:not([currentset*="personal-bookmarks-"]) #personal-bookmarks {
+  position: absolute !important;
+  bottom: 1px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: 100vw !important;
+}
+
+/* reduce size of bookmarks 'more bookmarks' menu chevron and remove its background color on navigation toolbar */
+#nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks #PlacesChevron .toolbarbutton-icon {
   min-width: 0px !important;
   min-height: 0px !important;
   width: 16px !important;
@@ -27,30 +37,97 @@
   box-shadow: unset !important;
 }
 
-#main-window:not([customizing="true"]) #nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks toolbarbutton.bookmark-item:not(.subviewbutton) {
+/* set minimum height for bookmarks, when on navigation toolbar */
+#nav-bar[currentset*="personal-bookmarks"] #personal-bookmarks toolbarbutton.bookmark-item:not(.subviewbutton) {
   min-height: 24px !important;
 }
 
-#main-window:not([customizing="true"]) #browser-panel > #navigator-toolbox > #PersonalToolbar {
+/* move bookmarks toolbar to bottom + style bookmarks toolbar */
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox > #PersonalToolbar {
+  -moz-window-dragging: no-drag;
   display: block !important;
   position: fixed !important;
   bottom: 0px !important;
   width: 100% !important;
-  height: 28px !important;
-  padding-left: 1px !important;
-  padding-right: 1px !important;
+  height: 27px !important;
+  -moz-padding-start: 1px !important;
+  -moz-padding-end: 1px !important;
   border-top: 1px solid var(--toolbox-border-bottom-color) !important;
 }
-
-#main-window:not([customizing="true"]) #browser-panel > #fullscr-toggler[hidden=true] + #content-deck {
-  margin-bottom: 27px;
+#navigator-toolbox > #PersonalToolbar:-moz-lwtheme {
+  background-repeat: no-repeat !important;
+  background-position: bottom left !important;
+  background-color: var(--toolbar-bgcolor) !important;
+  background-image: var(--lwt-header-image) !important;
+}
+#PersonalToolbar > *  {
+  min-height: 24px !important;
 }
 
-#main-window:not([customizing="true"]) #browser-panel > #navigator-toolbox[inFullscreen=true] + #fullscr-toggler[hidden=true] + #content-deck {
-  margin-bottom: unset;
+/* free some space below content */
+#main-window:not([chromehidden*="toolbar"]):not([sizemode="fullscreen"]) #browser-bottombox  {
+  margin-bottom: 26px;
 }
 
-#main-window:not([customizing="true"])[inFullscreen=true] #PersonalToolbar #bookmarks-menu-button::after {
+/* hide the projects custom bookmarks label, if used */
+#main-window[sizemode="fullscreen"] #PersonalToolbar #bookmarks-menu-button::after {
   visibility: collapse !important;
   display: none !important;
 }
+
+/* adjust flexible spaces visible rectangle in customizing mode */
+#PersonalToolbar toolbarpaletteitem[place=toolbar][id^=wrapper-customizableui-special-spring] toolbarspring {
+  height: 20px !important;
+  padding: unset !important;
+  margin: -15px 0 15px 0 !important;
+}
+/* workaround to make grabbing easier */
+#PersonalToolbar toolbarpaletteitem[place=toolbar][id^=wrapper-customizableui-special-spring] {
+  margin-top: -30px !important;
+  margin-bottom: 30px !important;
+  padding-top: 20px !important;
+}
+
+/* create bigger spaces */
+#PersonalToolbar  toolbarspring + toolbarspring {
+  min-width: 84px !important;
+  width: auto !important;
+  max-width: 128px !important;
+}
+
+/* remove load/stop button animations */
+#reload-button:not([displaystop]) > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image,
+#reload-button[displaystop] + #stop-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  animation-duration: 0ms !important;
+}
+#reload-button > .toolbarbutton-animatable-box,
+#stop-button > .toolbarbutton-animatable-box {
+  visibility: hidden !important;
+}
+
+/* bookmarks item box width */
+#PersonalToolbar[currentset="personal-bookmarks"] #personal-bookmarks {
+  min-width: 40px !important;
+  width: auto !important;
+  max-width: 100vw !important;
+}
+#PersonalToolbar:not([currentset="personal-bookmarks"]) #personal-bookmarks {
+  min-width: 40px !important;
+  width: auto !important;
+  max-width: 50vw !important;
+}
+
+ /* override multiple bookmark lines option */
+#personal-bookmarks #PlacesToolbar .chevron{
+  visibility: visible !important;
+}
+
+
+/* icon shadows for dark and light themes */ /*
+#main-window[lwthemetextcolor=bright] #navigator-toolbox > #PersonalToolbar > .webextension-browser-action > .toolbarbutton-badge-stack {
+  filter: drop-shadow(1px 1px 0.5px #bbb) drop-shadow(-1px -1px 0.5px #bbb) drop-shadow(-1px 1px 0.5px #bbb) drop-shadow(1px -1px 0.5px #bbb);
+}
+#main-window[lwthemetextcolor=dark] #navigator-toolbox > #PersonalToolbar > .webextension-browser-action > .toolbarbutton-badge-stack {
+  filter: drop-shadow(1px 1px 1px #222);
+}
+/**/

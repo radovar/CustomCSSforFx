@@ -1,28 +1,36 @@
-/*AGENT_SHEET*/
-
-/* Firefox 57+ userChrome.css tweaks ************************************************************/
+/* Firefox Quantum userChrome.css tweaks ********************************************************/
 /* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **********/
-/* by Aris (aris-addons@gmx.net)*****************************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ********************************************/
 /************************************************************************************************/
 
 /*************************************************************************************************
 
   README
-  
+
   Finding profile folder: address bar > about:support > Profile Folder > Open Folder
-  CSS files and subfolders belong into \PROFILEFOLDER\chrome\ directory.
-  
+  CSS files and sub-folders belong into \PROFILEFOLDER\chrome\ directory.
+  \chrome\config\
+  \chrome\css\
+  \chrome\image\
+  \chrome\xml\
+  \chrome\userChrome.css
+  \chrome\userContent.css
+
   ENABLING options: remove the combination of / and * before '@import'.
   DISABLING options: add the combination of / and * before '@import'.
-  
-  Some '@import' features might not work properly on macOS and Linux -> Firefox bug
-  
-  CSS tweaks won't work, if '@namespace' references are used inside .css files!
-  
-  Do not report issues with EXPERIMENTAL settings! They are for testing only!
-  
-  All options have signigicant categories & names. Read whole file to get an overview.
+
+  FIREFOX BUGS (nothing CSS code can do about):
+  - some '@import' calls might not work properly on macOS and Linux
+  - some '@import' calls might not work properly, if multi-process mode (e10s) is disabled
+  - in both cases CSS code has to be added to userContent.css file manually
+
+  Some CSS tweaks won't work, if '@namespace' references are used inside .css files!
+
+  EXPERIMENTAL settings are for testing only!
+
+  All options have significant categories and names.
+
+  GENERAL SUPPORT / DISCUSSION THREAD: github.com/Aris-t2/CustomCSSforFx/issues/109
 
 *************************************************************************************************/
 
@@ -30,7 +38,7 @@
 /* about:addons *********************************************************************************/
 /************************************************************************************************/
 
-/* NOTE: 'Version number for add-ons' will soon stop working when Mozilla drops XBL support. *****
+/* NOTE: 'Version number for add-ons' will stop working soon when Mozilla drops XBL support. *****
 		 See https://bugzilla.mozilla.org/show_bug.cgi?id=1397874 *******************************/
 
 /* version number for add-ons *******************************************************************/
@@ -47,6 +55,8 @@
 /* other settings *******************************************************************************/
 /* @import url(./css/aboutaddons/addonlists_only_show_buttons_on_hover.css); /**/
 /* @import url(./css/aboutaddons/addonlists_replace_button_labels_with_icons.css); /**/
+/* @import url(./css/aboutaddons/addonlists_move_button_to_start.css); /**/
+@import url(./css/aboutaddons/addonlists_green_dot_hidden.css); /**/
 @import url(./css/aboutaddons/description_page_alternative_content_order.css); /**/
 @import url(./css/aboutaddons/recentupdates_category_always_visible.css); /**/
 /* @import url(./css/aboutaddons/search_category_always_visible.css); /**/
@@ -68,6 +78,10 @@
 
 /* @import url(./css/aboutnewtab/dark_appearance.css); /**/
 
+/* Firefox 57-59 only ***************************************************************************/ 
+/* 'about:config > browser.newtabpage.activity-stream.enabled > false' enables old appearance ***/
+/* @import url(./css/aboutnewtab/bottom_launcher_visible.css); /**/
+
 
 /************************************************************************************************/
 /* WEB CONTENT **********************************************************************************/
@@ -76,6 +90,9 @@
 /* top level image on white background (can sometimes cause glitches) - only use one at a time **/
 /* @import url(./css/webcontent/toplevel_image_classic_v1.css); /**/
 /* @import url(./css/webcontent/toplevel_image_classic_v2.css); /**/
+
+/* Screenshots - internal add-on ****************************************************************/
+/* @import url(./css/webcontent/screenshots_alternative_save_ui.css); /**/
 
 
 /************************************************************************************************/

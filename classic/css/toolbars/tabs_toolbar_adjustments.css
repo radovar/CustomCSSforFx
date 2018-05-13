@@ -1,8 +1,4 @@
-/*AGENT_SHEET*/
-
-/* Firefox 57+ userChrome.css tweaks ****************************************************/
-/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **/
-/* by Aris (aris-addons@gmx.net)*********************************************************/
+/* Firefox Quantum userChrome.css tweaks ************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -20,24 +16,19 @@
   -moz-margin-start: 2px !important;
 }
 
-/* tab toolbar postion */
+/* tab toolbar position */
 #TabsToolbar{
   padding-right: 2px !important;
   padding-left: 2px !important;
   min-height: unset !important;
 }
 
-/* make sure toolbar buttons do not increase toolbar height */
-#TabsToolbar > toolbarpaletteitem,
-#TabsToolbar > toolbarbutton {
-  min-height: unset !important;
-  padding: unset !important;
-  margin: unset !important;
-}
-#TabsToolbar > toolbarpaletteitem  .toolbarbutton-icon,
-#TabsToolbar > toolbarbutton  .toolbarbutton-icon{
-  min-width: unset !important;
-  width: 24px !important;
-}
+/* code for macOS */
+@media not all and (-moz-os-version: windows-win7) {
+@media not all and (-moz-os-version: windows-win8) {
+@media not all and (-moz-os-version: windows-win10) {
+	#TabsToolbar .titlebar-placeholder[type="caption-buttons"]:not([ordinal="1000"]) {
+	  -moz-margin-start: 24px !important;
+	}
+}}}
 
-/**/

@@ -1,58 +1,61 @@
-**[Download Firefox 57+ CSS tweaks known from Classic Theme Restorer / Classic Toolbar Button / GlassMyFox](https://github.com/Aris-t2/CustomCSSforFx/issues/2)**  
-**[Download Firefox 57+ CSS tweaks known from NoiaButtons](https://github.com/Aris-t2/CustomCSSforFx/releases/tag/NoiaButtons)**  
+## Downloads for Firefox Quantum (57+)
+
+**[Classic Theme Restorer / Classic Toolbar Buttons / GlassMyFox CSS tweaks](https://github.com/Aris-t2/CustomCSSforFx/issues/2)**  
+**[NoiaButtons CSS tweaks](https://github.com/Aris-t2/CustomCSSforFx/releases/tag/NoiaButtons)** / **[Custom Scrollbars](https://github.com/Aris-t2/Scrollbars/releases)**  
+
+## Want to support this project?
+
+**[[ Paypal Me ]](https://www.paypal.me/tkpay)**  
 
 ## Instructions / Howto / Readme
 
-- [Want to support this project?](#want-to-support-this-project)  
-- [WebExtensions can not modify browsers appearance in Firefox 57+](#webextensions-can-not-modify-browsers-appearance-in-firefox-57)  
-- [Where to find Firefox profile folder and what is the correct location for user styles?](#where-to-find-firefox-profile-folder-and-what-is-the-correct-location-for-user-styles)  
+- [WebExtensions can not modify Firefox Quantums appearance properly](#webextensions-can-not-modify-firefox-quantums-appearance-properly)  
+- [Where to find Firefox profile folder? The correct location for user styles.](#where-to-find-firefox-profile-folder-the-correct-location-for-user-styles)  
 - [How to use custom user styles?](#how-to-use-custom-user-styles)  
 - [How to find item ids and attributes?](#how-to-find-item-ids-and-attributes)  
 - [How to modify custom user styles?](#how-to-modify-custom-user-styles)  
 - [Suggested ui tweaks](#suggested-ui-tweaks)  
 - ['about:config' tweaks](#aboutconfig-tweaks)  
 
-## Want to support this project?
-
-**[[ Paypal Me ]](https://www.paypal.me/tkpay)**  
-
-## WebExtensions can not modify browsers appearance in Firefox 57+
+## WebExtensions can not modify Firefox Quantums appearance properly
 
 The only way to modify ui is adding custom CSS code to **userChrome.css** and **userContent.css** files inside browsers profile folder.  
 Keep in mind CSS code can not create entirely new items, buttons or toolbars. It only can modify already present ui items.  
 
-## Where to find Firefox profile folder and what is the correct location for user styles?
+## Where to find Firefox profile folder? The correct location for user styles.
 
 **1.** Find your profile folder ('profile names are different for everyone').  
 `about:support > Profile Folder > Open Folder`  
-or `Shift+F2` to open Firefox's command line, then enter the command `folder openprofile`  
+or `about:profiles > Root Directory > Open Folder`  
+or open command line with `Shift+F2` and enter`folder openprofile`  
 
-**2.** User styles belong into `\chrome\` folder. Create it, if there is none yet.  
-`\ PROFILENAME \chrome\`  
+**2.** User styles belong into `\chrome\` folder. Create it, if there is none yet. It should look like this afterwards:  
+`\ PROFILE FOLDER NAME \chrome\`  
 
-**3.** Copy userChrome.css, userContent.css and the folders into `\chrome\` subfolder so the results look like this.  
-`\ PROFILENAME \chrome\css\`  
-`\ PROFILENAME \chrome\image\`  
-`\ PROFILENAME \chrome\xml\`  
-`\ PROFILENAME \chrome\userChrome.css`  
-`\ PROFILENAME \chrome\userContent.css`  
+**3.** Copy `userChrome.css`, `userContent.css` and `\config\`, `\css\`, `\image\`, `\xml\` folders into `\chrome\` folder. It should look like this afterwards:  
+`\chrome\config\`  
+`\chrome\css\`  
+`\chrome\image\`  
+`\chrome\xml\`  
+`\chrome\userChrome.css`  
+`\chrome\userContent.css`  
 
 (Optional) Profile folders location on drive:  
 **Windows**  
-`C:\Users\ USERNAME \AppData\Roaming\Mozilla\Firefox\Profiles\ PROFILENAME \`  
+`C:\Users\ USERNAME \AppData\Roaming\Mozilla\Firefox\Profiles\ PROFILE FOLDER NAME \`  
 Hidden files must be visible to see `AppData` folder. Alternatively open `%APPDATA%\Mozilla\Firefox\Profiles\` from explorers location bar.  
 **Linux**  
-`\home\ USERNAME \.mozilla\firefox\ PROFILENAME \`  
+`\home\ USERNAME \.mozilla\firefox\ PROFILE FOLDER NAME \`  
 Hidden files must be visible to see `.mozilla` folder.  
 **Mac OS X**  
-`~\Library\Mozilla\Firefox\Profiles\ PROFILENAME \` or  
-`~\Library\Application Support\Mozilla\Firefox\Profiles\ PROFILENAME \`  
+`~\Library\Mozilla\Firefox\Profiles\ PROFILE FOLDER NAME \` or  
+`~\Library\Application Support\Mozilla\Firefox\Profiles\ PROFILE FOLDER NAME \`  
 `\Users\ USERNAME \Library\Application\Support\Firefox\Profiles\`  
 
 ## How to use custom user styles?
 
 The _userChrome.css_ and _userContent.css_ files works like an options\configurations file. All main "features" can be enabled and disabled there.  
-Edit _userChrome.css_ and _userContent.css_ with any text editor (**[Notepad++](https://notepad-plus-plus.org/download/)** recommended on Windows) and enable btw. disable any feature you like by modifying, removing or outcommenting available `@import` strings.  
+Edit _userChrome.css_ and _userContent.css_ with any text editor (**[Notepad++](https://notepad-plus-plus.org/download/)** recommended on Windows) and enable or disable any feature you like by modifying, removing or outcommenting available `@import` strings.  
 Restart Firefox after every modification for changes to take effect.  
 
 **Example**  
@@ -151,6 +154,10 @@ _browser.tabs.closeWindowWithLastTab_
 **Titlebar**  
 _browser.tabs.drawInTitlebar_  
 
+**Old about:newtab and about:home pages (Firefox 57-59 only)**  
+_browser.newtabpage.activity-stream.enabled_  
+_browser.newtabpage.activity-stream.aboutHome.enabled_
+
 **HTML5 fullscreen warning**  
 _full-screen-api.warning.delay_ > 0 or -1 (reduces delay / hides warning)  
 _full-screen-api.warning.timeout_ > 0 (reduces delay)  
@@ -222,4 +229,7 @@ _experiments.activeExperiment_
 _experiments.supported_  
 _datareporting.healthreport.uploadEnabled_  
 _nsITelemetry.canRecordBase_  
-_nsITelemetry.canRecordExtended_
+_nsITelemetry.canRecordExtended_  
+_browser.newtabpage.activity-stream.feeds.telemetry_  
+_browser.newtabpage.activity-stream.telemetry_  
+_extensions.screenshots.upload-disabled_ ("true" to disable)

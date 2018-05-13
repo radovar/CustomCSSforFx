@@ -1,0 +1,13 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+@-moz-document url(about:newtab), url(about:home) {
+
+	#launcher {
+	  display: inherit !important;
+	  visibility: visible !important;
+	}
+
+}

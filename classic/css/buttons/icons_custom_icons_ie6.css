@@ -1,14 +1,10 @@
-/*AGENT_SHEET*/
-
-/* Firefox 57+ userChrome.css tweaks ****************************************************/
-/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **/
-/* by Aris (aris-addons@gmx.net)*********************************************************/
+/* Firefox Quantum userChrome.css tweaks ************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
 /*
-   There are no icon set versions for HiDPI modes avaialbe, so icons
+   There are no icon set versions for HiDPI modes available, so icons
    will look blurry in those modes.
 */
 
@@ -20,6 +16,11 @@
 	#library-button,#bookmarks-toolbar-placeholder,#nav-bar-overflow-button,#alltabs-button ),
 #downloads-button:not([indicator="true"]),#panic-button:not([open]),#pocket-button:not([open]) {
   list-style-image: url("../../image/toolbar_fx_ie6.png") !important;
+}
+
+.tabs-newtab-button {
+  list-style-image: url("../../image/newtabff1.png") !important;
+  -moz-image-region: rect(2px, 15px, 16px, 1px) !important;
 }
 
 #downloads-button:not(:-moz-any([progress],[counter],[paused],[attention])) #downloads-indicator-progress-outer,

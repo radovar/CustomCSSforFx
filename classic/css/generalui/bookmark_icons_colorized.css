@@ -1,8 +1,4 @@
-/*AGENT_SHEET*/
-
-/* Firefox 57+ userChrome.css tweaks ****************************************************/
-/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **/
-/* by Aris (aris-addons@gmx.net)*********************************************************/
+/* Firefox Quantum userChrome.css tweaks ************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -40,6 +36,18 @@ treechildren::-moz-tree-image(title, query) {
  list-style-image: url("./../../image/query.png") !important;
  -moz-image-region: auto !important;
 }
+
+treechildren::-moz-tree-image(title, query, dayContainer) {
+  list-style-image: url("./../../image/calendar.png") !important;
+  -moz-image-region: auto !important;
+}
+
+
+treechildren::-moz-tree-image(query, OrganizerQuery_History) {
+  list-style-image: url("./../../image/calendar.png") !important;
+  -moz-image-region: auto !important;
+}
+
 
 .bookmark-item[container] {
   list-style-image: url("./../../image/folder-item.png") !important;
