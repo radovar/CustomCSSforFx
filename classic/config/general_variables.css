@@ -46,6 +46,15 @@
 
   /* for addonbar_move_bookmarks_toolbar_to_bottom.css */
   --addonbar_height: 27px !important;
+  
+  /* for custom_backforward_connected.css */
+  --color_disabled_state: #f9f9fa !important;
+  --color_default_state: #e8e8e8 !important;
+  --color_hover_state: lightblue !important;
+  --color_active_state: lightgrey !important;
+  
+  /* for ac_popup_result_font_size.css */
+  --results_font_size: var(--general_ui_font_size,10pt) !important; /* 10pt */
 }
 
 :root[uidensity="touch"] {
@@ -53,7 +62,7 @@
   --classic_squared_tabs_tab_height: 36px !important;
 }
 
-/* for ac_popup_classic_with_two_lines_fx64.css */
+/* for ac_popup_classic_with_two_lines_fx64.css and ac_popup_classic_with_two_lines_fx68.css */
 :root {
   --ac_popup_width: 700px !important; /* popup width in normal mode */
   --ac_popup_number_of_results: 10 !important;  /* value has to be identical to about:config > browser.urlbar.maxRichResults */
