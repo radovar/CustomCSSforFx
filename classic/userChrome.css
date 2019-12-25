@@ -225,7 +225,7 @@
 /* @import "./css/buttons/button_popup_panel_mozdialog.css"; /**/
 
 /* CUSTOM BACK & FORWARD BUTTONS appearance - [only use one at a time] **************************/
- @import "./css/buttons/custom_backforward_connected_to_location_bar.css"; /**/
+/* @import "./css/buttons/custom_backforward_connected_to_location_bar.css"; /**/
 /* @import "./css/buttons/custom_backforward_connected_to_location_bar_aero.css"; /**/			/* <-- AERO colors */
 /* @import "./css/buttons/custom_backforward_large_ff2.css"; /**/
 /* @import "./css/buttons/custom_backforward_large_ff3.css"; /**/
