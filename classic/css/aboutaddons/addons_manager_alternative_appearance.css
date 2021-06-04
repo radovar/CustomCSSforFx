@@ -2,8 +2,11 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-@-moz-document  url-prefix(chrome://mozapps/content/extensions/extensions.xul),
-				url-prefix(about:addons) {
+
+@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul),
+	url-prefix(about:addons),
+	url-prefix(chrome://mozapps/content/extensions/aboutaddons.html),
+	url-prefix(chrome://mozapps/content/extensions/aboutaddons.xhtml) {
 
 	.category {
 	  margin-inline-start: 0px !important;
@@ -430,6 +433,30 @@
 	  background: white !important;
 	  margin-left: 0px !important;
 	  margin-right: 0px !important;
+	}
+
+}
+
+
+@-moz-document  url-prefix(chrome://mozapps/content/extensions/shortcuts.html) {
+
+	html,
+	body {
+	  background: -moz-Dialog !important;
+	}
+
+	.body {
+	  margin-inline-start: 0px !important;
+	  margin-inline-end: 0px !important;
+	  margin-bottom: 4px !important;
+	  max-width: unset !important;
+	}
+
+	#addon-shortcuts .shortcut.card {
+	  width: unset !important;
+	  padding-top: 0 !important;
+	  padding-bottom: 0 !important;
+	  margin: 1px 0  !important;
 	}
 
 }

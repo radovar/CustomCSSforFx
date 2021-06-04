@@ -82,6 +82,7 @@
 /* Position of items title & font-size */
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-title {
   position: absolute !important;
+  display:block !important;
   top: 1px;
   font-size: 14px;
 }
@@ -96,6 +97,7 @@
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-url,
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action {
   position: absolute !important;
+  display:block !important;
   top: 24px;
   font-size: 12px;
 }
@@ -111,13 +113,14 @@
 /* Position of bookmark tags */
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-tags {
   position: absolute !important;
+  display:block !important;
   top: 3px;
 }
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"]:-moz-locale-dir(ltr) .autocomplete-richlistitem .ac-tags {
-  right: 0px;
+  right: 4px;
 }
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"]:-moz-locale-dir(rtl) .autocomplete-richlistitem .ac-tags {
-  left: 0px;
+  left: 4px;
 }
 
 /* Hide separator between title and url ans space before icons */

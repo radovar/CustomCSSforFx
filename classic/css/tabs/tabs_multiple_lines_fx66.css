@@ -15,7 +15,7 @@
 /* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
 
 :root{
-  --tabs-lines: 4;
+  --tabs-lines: 3;
   --tab_min_width_mlt: 80px;
   --tab_max_width_mlt: 200px;
   --tab-min-height_mlt: var(--tab-min-height,32px); /* set own value here, if used without configuration files */
@@ -85,10 +85,10 @@
   display: none !important;
 }
 
-#tabbrowser-tabs[overflow="true"] > .tabbrowser-arrowscrollbox > .tabs-newtab-button,
-#tabbrowser-tabs:not([hasadjacentnewtabbutton]) > .tabbrowser-arrowscrollbox > .tabs-newtab-button,
-#TabsToolbar[customizing="true"] #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .tabs-newtab-button {
-  visibility: visible !important;
+#tabbrowser-tabs[overflow="true"] > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
+#tabbrowser-tabs:not([hasadjacentnewtabbutton]) > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
+#TabsToolbar[customizing="true"] #tabbrowser-tabs > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
+  visibility: hidden !important;
 }
 
 /* hide private window indicator, window controls and titlebar placeholders */
@@ -126,4 +126,10 @@
 /* fix scrollbar */
 #main-window[tabsintitlebar] #tabbrowser-tabs {
   -moz-window-dragging: no-drag !important;
+}
+
+/*lw theme fix */
+#main-window[style*='--lwt-header-image']:-moz-lwtheme {
+  /*background: var(--lwt-header-image) !important;*/
+  background-repeat: repeat-y !important;
 }

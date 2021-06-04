@@ -55,14 +55,14 @@
 }
 
 /* 'new tab' tab size */
-.tabs-newtab-button {
+:-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
   vertical-align: bottom !important;
   height: var(--mltabs-newtab-height) !important;
   margin-bottom: -1px !important;
 }
 
 @media (-moz-windows-classic) {
-	#TabsToolbar #tabbrowser-tabs .tabs-newtab-button {
+	#TabsToolbar #tabbrowser-tabs :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
 	  margin-bottom: 1px !important;
 	  height: calc(var(--mltabs-newtab-height) - 2px) !important;
 	}
@@ -115,4 +115,10 @@
   border-image: unset !important;
   border-image-slice: unset !important;
   border: 0 !important;
+}
+
+/*lw theme fix */
+#main-window:-moz-lwtheme {
+  background: var(--lwt-header-image) !important;
+  background-repeat: repeat-y !important;
 }

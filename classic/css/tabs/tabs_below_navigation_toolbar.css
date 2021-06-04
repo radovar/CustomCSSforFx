@@ -96,6 +96,8 @@
 
 /* tab height */
 #tabbrowser-tabs,
+#tabbrowser-arrowscrollbox,
+#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned],
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox,
 .tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
   min-height: var(--tab-min-height_tnot) !important;
@@ -160,9 +162,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   background-image: linear-gradient(var(--toolbar-bgcolor),var(--toolbar-bgcolor)) !important;
 }
 
-#main-window:not(:-moz-lwtheme) #TabsToolbar :-moz-any(.tabs-newtab-button,.scrollbutton-up,.scrollbutton-down),
+#main-window:not(:-moz-lwtheme) #TabsToolbar :-moz-any(.tabs-newtab-button,#tabs-newtab-button,.scrollbutton-up,.scrollbutton-down),
 #main-window:not(:-moz-lwtheme) #TabsToolbar > toolbarbutton,
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-darktext #TabsToolbar :-moz-any(.tabs-newtab-button,.scrollbutton-up,.scrollbutton-down),
+#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-darktext #TabsToolbar :-moz-any(.tabs-newtab-button,#tabs-newtab-button,.scrollbutton-up,.scrollbutton-down),
 #main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-darktext #TabsToolbar > toolbarbutton {
   fill: var(--classic_squared_tabs_new_tab_icon_color) !important;
   color: var(--classic_squared_tabs_new_tab_icon_color) !important;
@@ -255,7 +257,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 /* scroll buttons */
 #TabsToolbar:not(:-moz-lwtheme) #alltabs-button,
 #TabsToolbar:not(:-moz-lwtheme) .tabbrowser-arrowscrollbox > .scrollbutton-up,
-#TabsToolbar:not(:-moz-lwtheme) .tabbrowser-arrowscrollbox > .scrollbutton-down {
+#TabsToolbar:not(:-moz-lwtheme) .tabbrowser-arrowscrollbox > .scrollbutton-down,
+#TabsToolbar:not(:-moz-lwtheme) #tabbrowser-arrowscrollbox > #scrollbutton-up,
+#TabsToolbar:not(:-moz-lwtheme) #tabbrowser-arrowscrollbox > #scrollbutton-down {
   fill: black !important;
 }
 
